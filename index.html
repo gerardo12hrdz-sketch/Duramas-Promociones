@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Cartonera de Morelia y Uruétaro | DURAMAS</title>
-    <link rel="stylesheet" href="styles.css">
     <!-- Iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -19,7 +20,7 @@
     <!-- Navegación -->
     <header class="navbar">
         <div class="logo-nav-container">
-            <img src="logo-duramas.png" alt="Logo DURAMAS" class="logo-nav-img">
+            <img src="logo-duramas.png.png" alt="Logo DURAMAS" class="logo-nav-img">
             <div class="logo-text">
                 <span class="brand-title">CARTONERA DE MORELIA Y URUÉTARO</span>
             </div>
@@ -39,7 +40,7 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <div class="main-logo-wrapper">
-                <img src="logo-duramas.png" alt="Logo DURAMAS Principal" class="logo-hero-principal">
+                <img src="logo-duramas.png.png" alt="Logo DURAMAS Principal" class="logo-hero-principal">
             </div>
 
             <h1>Láminas Asfálticas, Plastiteja y Materiales de Construcción</h1>
@@ -84,7 +85,9 @@
             <!-- Plastiteja -->
             <div class="card-producto">
                 <div class="card-tag">Plástico</div>
-                <div class="img-placeholder"><i class="fa-solid fa-house-chimney-window"></i></div>
+                <div class="card-img-container">
+                    <img src="plastiteja.jpg.jpg" alt="Lámina de Plástico Plastiteja" class="card-img">
+                </div>
                 <div class="card-body">
                     <h3>Lámina de Plástico Plastiteja</h3>
                     <p class="specs">Ancho: 1.08 m | Largos de 1.50 m a 7.20 m</p>
@@ -101,7 +104,9 @@
             <!-- Lámina de Cartón Asfáltica -->
             <div class="card-producto">
                 <div class="card-tag">Asfálticos</div>
-                <div class="img-placeholder"><i class="fa-solid fa-layer-group"></i></div>
+                <div class="card-img-container">
+                    <img src="carton.jpg.jpg" alt="Lámina de Cartón Asfáltica" class="card-img">
+                </div>
                 <div class="card-body">
                     <h3>Lámina de Cartón Asfáltica</h3>
                     <p class="specs">Fibra Delgada, Ligera, Popular, Duramas 12 y 14</p>
@@ -118,7 +123,9 @@
             <!-- Rollo Asfáltico -->
             <div class="card-producto">
                 <div class="card-tag">Impermeabilización</div>
-                <div class="img-placeholder"><i class="fa-solid fa-scroll"></i></div>
+                <div class="card-img-container">
+                    <img src="rollo.jpg.png" alt="Rollo Asfáltico" class="card-img">
+                </div>
                 <div class="card-body">
                     <h3>Rollo Asfáltico</h3>
                     <p class="specs">Medidas: 1 m x 27.23 cm | Peso: 10 Kg / Rollo</p>
@@ -135,7 +142,9 @@
             <!-- Cuñete -->
             <div class="card-producto">
                 <div class="card-tag">Envases</div>
-                <div class="img-placeholder"><i class="fa-solid fa-bucket"></i></div>
+                <div class="card-img-container">
+                    <img src="cunete.jpg.jpg" alt="Cuñete (Tambor Reforzado)" class="card-img">
+                </div>
                 <div class="card-body">
                     <h3>Cuñete (Tambor Reforzado)</h3>
                     <p class="specs">Capacidad de carga / Peso: 50 Kg</p>
@@ -152,7 +161,9 @@
             <!-- Poliducto y Manguera Agrícola -->
             <div class="card-producto">
                 <div class="card-tag">Conducción</div>
-                <div class="img-placeholder"><i class="fa-solid fa-circle-notch"></i></div>
+                <div class="card-img-container">
+                    <img src="poliducto.jpg.png" alt="Poliducto Eléctrico y Manguera Agrícola" class="card-img">
+                </div>
                 <div class="card-body">
                     <h3>Poliducto Eléctrico y Manguera Agrícola</h3>
                     <p class="specs">Medidas: 1/2", 3/4", 1", 1 1/2", 2" | Negro y Naranja</p>
@@ -169,7 +180,9 @@
             <!-- Mangueras para Gas y Agua -->
             <div class="card-producto">
                 <div class="card-tag">Conexiones</div>
-                <div class="img-placeholder"><i class="fa-solid fa-faucet-drip"></i></div>
+                <div class="card-img-container">
+                    <img src="mangueras.jpg.png" alt="Mangueras para Gas y Agua" class="card-img">
+                </div>
                 <div class="card-body">
                     <h3>Mangueras para Gas y Agua</h3>
                     <p class="specs">Tramadas de Aluminio, Pig-Tail, WC, Lavabo y Fregadero</p>
@@ -288,6 +301,43 @@
         <p>&copy; 2026 Todos los derechos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Lógica JavaScript integrada -->
+    <script>
+        document.getElementById('form-cotizacion').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const poblacion = document.getElementById('poblacion').value;
+            const asesor = document.getElementById('atendido-por').value;
+            const producto = document.getElementById('producto-select').value;
+            const mensaje = document.getElementById('mensaje').value || "Sin detalles adicionales";
+
+            let numeroDestino = "524432722109";
+            let nombreAsesor = "Sra. Alicia";
+
+            if (asesor === "Carlos") {
+                numeroDestino = "524431980853";
+                nombreAsesor = "Sr. Carlos";
+            }
+
+            const textoWhatsApp = `Hola ${nombreAsesor}, mi nombre o empresa es *${nombre}*.%0A%0A` +
+                                  `📍 *Población/Destino:* ${poblacion}%0A` +
+                                  `📌 *Producto de interés:* ${producto}%0A` +
+                                  `📝 *Detalles del pedido:* ${mensaje}%0A%0A` +
+                                  `📞 *Mi teléfono de contacto:* ${telefono}`;
+
+            window.open(`https://wa.me/${numeroDestino}?text=${textoWhatsApp}`, '_blank');
+        });
+
+        const botonesCotizarItems = document.querySelectorAll('.btn-cotizar-item');
+        botonesCotizarItems.forEach(boton => {
+            boton.addEventListener('click', function() {
+                const productoNombre = this.getAttribute('data-producto');
+                const textoWhatsApp = `Hola, solicito información y cotización directa del producto: *${productoNombre}*.`;
+                window.open(`https://wa.me/524432722109?text=${textoWhatsApp}`, '_blank');
+            });
+        });
+    </script>
 </body>
 </html>
